@@ -1,0 +1,24 @@
+stages:
+  - pack
+  - start
+
+cache:
+  key: "${CI_PIPELINE_ID}"
+  paths:
+    - dist
+    - node_modules
+
+.pack:
+  stage: pack
+  image: node
+  script:
+    - npm install
+    - npm run pack
+
+start:
+  stage: start
+  script:
+    - mv dist/fakekibana* .
+    - docker build . -t fakekibana
+    - docker-compose down
+    - docker-compose up -d

@@ -1,0 +1,34 @@
+{
+  "name": "fakekibana",
+  "version": "1.0.0",
+  "dependencies": {
+    "better-sqlite3": "^7.6.2",
+    "browserify": "^17.0.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "datatables.net": "^1.12.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "jquery": "^3.6.1",
+    "jquery-browserify": "^1.8.1",
+    "morgan": "~1.9.1",
+    "sqlite3": "^5.1.2"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "pack": "npm pack && mkdir -p dist && mv fakekibana*tgz dist"
+  },
+  "bundledDependencies": [
+    "better-sqlite3",
+    "browserify",
+    "cookie-parser",
+    "datatables.net",
+    "debug",
+    "express",
+    "jquery",
+    "jquery-browserify",
+    "morgan",
+    "sqlite3",
+    "cors"
+  ]
+}
